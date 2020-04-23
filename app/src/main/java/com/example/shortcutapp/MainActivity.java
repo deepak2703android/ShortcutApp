@@ -42,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) ;
-                {
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
 
                     ShortcutManager shortcutManager = (ShortcutManager) getSystemService(Context.SHORTCUT_SERVICE);
 
@@ -63,14 +62,12 @@ public class MainActivity extends AppCompatActivity {
                         shortcutManager.requestPinShortcut(pinned, null);
 
 
-                    } else {
-                        Toast.makeText(MainActivity.this, "Shortcut Not Supported On thos device", Toast.LENGTH_SHORT).show();
                     }
 
-
                 }
-
-
+                else {
+                    Toast.makeText(MainActivity.this, "Shortcut Not Supported On thos device", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
